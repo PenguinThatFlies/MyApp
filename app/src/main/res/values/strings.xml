@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MSG Lite</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="swipe_finger">Swipe Finger</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="conf_password">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="or">OR</string>
+    <string name="required" />
+    <string name="dont_have">Don\'t have account?</string>
+    <string name="have">Already have account?</string>
+    <string name="forgot">Forgot Password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

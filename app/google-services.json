@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "616126356385",
+    "project_id": "shualeduri-5df7e",
+    "storage_bucket": "shualeduri-5df7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616126356385:android:80373370d911206cd249e0",
+        "android_client_info": {
+          "package_name": "com.kotlin.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616126356385-b2b9jtofj857e927grlpe9eu9uvrl18f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRy5y-Oh0WycsUXLE5Yqjq00Qe4VQ6aSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616126356385-b2b9jtofj857e927grlpe9eu9uvrl18f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
