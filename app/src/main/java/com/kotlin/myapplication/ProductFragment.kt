@@ -17,7 +17,6 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
     private lateinit var nameList: Array<String>
     private lateinit var priceList: Array<String>
     private lateinit var categoryList: Array<String>
-    lateinit var uid: Array<Int>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,14 +42,14 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
         )
 
         nameList = arrayOf(
-            "Irakli",
-            "Vano",
-            "Shako",
-            "Saba",
-            "Irakli",
-            "Vano",
-            "Shako",
-            "Saba"
+            "WEB",
+            "UI/UX",
+            "Adobe XD",
+            "Figma",
+            "Android",
+            "IOS",
+            "Shop",
+            "Blog"
         )
 
         priceList = arrayOf(
@@ -65,14 +64,14 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
         )
 
         categoryList = arrayOf(
-            "Irakli",
-            "Vano",
-            "Shako",
-            "Saba",
-            "Irakli",
-            "Vano",
-            "Shako",
-            "Saba"
+            "WEB",
+            "UI/UX",
+            "Adobe XD",
+            "Figma",
+            "Android",
+            "IOS",
+            "Shop",
+            "Blog"
         )
 
         newArrayList = arrayListOf<ProductData>()
@@ -93,7 +92,7 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
 
     private fun getUser(){
         for (i in imageId.indices){
-            val data = ProductData(imageId[i], nameList[i], priceList[i]) //, nameList[i]
+            val data = ProductData(imageId[i], nameList[i], priceList[i])
             newArrayList.add(data)
         }
         val adapter = ProductAdapter(newArrayList)
