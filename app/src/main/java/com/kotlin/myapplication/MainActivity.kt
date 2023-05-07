@@ -33,13 +33,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(HomeFragment())
+
         binding.bottomNavigationView.setOnItemSelectedListener {
-            init()
+
             when(it.itemId){
 
                 R.id.home -> replaceFragment(HomeFragment())
+                R.id.product -> replaceFragment(ProductFragment())
                 R.id.profile -> replaceFragment(ProfileFragment())
-
+                //R.id.upload -> replaceFragment(UploadFragment())
                 else ->{
                 }
             }
@@ -48,18 +50,13 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("email")
 
-        binding.logout.setOnClickListener {
-            Firebase.auth.signOut()
-            startActivity(Intent(this@MainActivity,SignIn::class.java))
-            finish()
-        }
 
         val emailID = FirebaseAuth.getInstance().currentUser!!.uid
         db.collection("user").document(emailID).get().addOnSuccessListener {
             if (it != null){
                 val email = it.data?.get("email")?.toString()
 
-                binding.email.text = email
+                //binding.email.text = email
             }
         }
             .addOnFailureListener { exception ->
@@ -68,19 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun init(){
-        binding.apply {
-            db2.child(auth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val userInfo = snapshot.getValue(User::class.java) ?: return
-                    email.text = userInfo.email
-                }
-                override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@MainActivity, "error", Toast.LENGTH_SHORT).show()
-                }
-            })
-        }
-    }
+
 
     private fun replaceFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
