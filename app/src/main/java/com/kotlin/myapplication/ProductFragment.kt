@@ -2,11 +2,11 @@ package com.kotlin.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.kotlin.myapplication.databinding.FragmentProductBinding
 
 class ProductFragment : Fragment(R.layout.fragment_product) {
@@ -42,14 +42,14 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
         )
 
         nameList = arrayOf(
-            "WEB",
-            "UI/UX",
-            "Adobe XD",
-            "Figma",
-            "Android",
-            "IOS",
-            "Shop",
-            "Blog"
+            "Irakli Sharikadze",
+            "Joey Tribian",
+            "Chandler Bing",
+            "Monika Geller",
+            "Ross Geller",
+            "Joey Tribian ",
+            "Monika Geller",
+            "Chandler Bing"
         )
 
         priceList = arrayOf(
@@ -101,12 +101,11 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
         adapter.setOnItemClickListener(object : ProductAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
                 activity?.let{
-                    val intent = Intent (it, ActivityProductPage::class.java)
-                    it.startActivity(intent)
+                    val intent = Intent (it, HomeFragment::class.java)
                     intent.putExtra("ImageId", newArrayList[position].image)
                     intent.putExtra("name", newArrayList[position].name)
                     intent.putExtra("price", newArrayList[position].price)
-                    startActivity(intent)
+                    it.startActivity(intent)
                 }
             }
         })
